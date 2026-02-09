@@ -1,11 +1,16 @@
 @import "tailwindcss";
 @import "./theme.css";
 
-@plugin "tailwindcss-animate";
-
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));
 @custom-variant label (& [data-label]);
 @custom-variant focus-input-within (&:has(input:focus));
+
+@theme {
+    @keyframes carousel {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+}
 
 @utility scrollbar-hide {
     /* For Webkit-based browsers (Chrome, Safari and Opera) */

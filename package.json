@@ -1,5 +1,5 @@
 {
-    "name": "portfolio",
+    "name": "me.jotis.portfolio",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -25,7 +25,6 @@
         "clsx": "^2.1.1",
         "tailwind-merge": "^3.4.0",
         "tailwindcss": "^4",
-        "tailwindcss-animate": "^1.0.7",
         "typescript": "^5"
     },
     "ignoreScripts": [
