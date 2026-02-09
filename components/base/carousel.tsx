@@ -15,7 +15,7 @@ export function Carousel({ elements }: CarouselProps) {
 
     return (
         <section className="w-full px-8 py-24 bg-brand-section">
-            <div className="p-5 relative max-w-5xl w-full mx-auto overflow-hidden">
+            <div className="p-5 max-w-5xl w-full mx-auto overflow-hidden mask-x-from-80%">
                 <div className="w-fit flex items-center gap-8 animate-marquee">
                     {items.map((e, _) => (
                         <span
@@ -26,7 +26,6 @@ export function Carousel({ elements }: CarouselProps) {
                         </span>
                     ))}
                 </div>
-                <span className="size-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-linear-to-r from-brand-section via-transparent to-brand-section" />
             </div>
         </section>
     );

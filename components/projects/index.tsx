@@ -11,24 +11,59 @@ const projects: (ComponentProps<typeof Project> & { id: number })[] = [
         name: 'Byte & Slice',
         description:
             'Experience the free, unlimited, open-source URL shortener that puts your privacy first—no tracking, no logs, no cookies. Deploy and self-host effortlessly on your server with Docker in just minutes!',
-        image: '',
-        tags: [],
+        image: '/project-mockups/byte-and-slice.png',
+        tags: [
+            {
+                id: 1,
+                content: 'TailwindCSS',
+            },
+            {
+                id: 2,
+                content: 'Next.js',
+            },
+            {
+                id: 3,
+                content: 'Bun',
+            },
+        ],
     },
     {
         id: 2,
         name: 'Becall App',
         description:
             'A mobile application designed to efficiently manage productivity for modern businesses. It enables employees to accurately track schedules, clock in and out and manage breaks.',
-        image: '',
-        tags: [],
+        image: '/project-mockups/becall-app.png',
+        tags: [
+            {
+                id: 1,
+                content: 'TailwindCSS',
+            },
+            {
+                id: 2,
+                content: 'Angular',
+            },
+            {
+                id: 3,
+                content: 'Ionic',
+            },
+        ],
     },
     {
         id: 3,
         name: 'Yorubot',
         description:
             'Built with the powerful Discord.js library. Crafted purely for entertainment and fun interactions. Ready to deploy, fully open-source, and released under the permissive MIT license!',
-        image: '',
-        tags: [],
+        image: '/project-mockups/yorubot.png',
+        tags: [
+            {
+                id: 1,
+                content: 'TypeScript',
+            },
+            {
+                id: 2,
+                content: 'Bun',
+            },
+        ],
     },
 ];
 
