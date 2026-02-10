@@ -1,6 +1,7 @@
-import type { data } from '@/lib/data';
+import z from 'zod';
+import { workExperienceSchema } from '@/lib/data/schema';
 
-export const workExperiences: typeof data.workExperiences = [
+const workExperiences = z.array(workExperienceSchema).parse([
     {
         company: 'Becall',
         role: 'Software Developer & Cibersecurity Manager',
@@ -31,4 +32,6 @@ export const workExperiences: typeof data.workExperiences = [
             to: new Date('01/05/2024'),
         },
     },
-];
+]);
+
+export { workExperiences };

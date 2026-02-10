@@ -41,9 +41,10 @@ import {
     Zod,
 } from '@ridemountainpig/svgl-react';
 import { Fragment } from 'react/jsx-runtime';
-import type { DataSchema } from '@/lib/data/schema';
+import { z } from 'zod';
+import { skillSchema } from '@/lib/data/schema';
 
-export const skills: DataSchema['skills'] = [
+const skills = z.array(skillSchema).parse([
     <Fragment key={1}>
         <AmazonWebServicesDark className="size-8" />
         AWS
@@ -204,4 +205,6 @@ export const skills: DataSchema['skills'] = [
         <Zod className="size-8" />
         Zod
     </Fragment>,
-];
+]);
+
+export { skills };

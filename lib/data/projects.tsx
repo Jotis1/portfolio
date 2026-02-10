@@ -7,9 +7,10 @@ import {
     TypeScript,
 } from '@ridemountainpig/svgl-react';
 import { Fragment } from 'react/jsx-runtime';
-import type { data } from '@/lib/data';
+import { z } from 'zod';
+import { projectSchema } from '@/lib/data/schema';
 
-export const projects: typeof data.projects = [
+const projects = z.array(projectSchema).parse([
     {
         name: 'Byte & Slice',
         description:
@@ -66,4 +67,6 @@ export const projects: typeof data.projects = [
             </Fragment>,
         ],
     },
-];
+]);
+
+export { projects };
