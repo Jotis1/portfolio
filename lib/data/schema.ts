@@ -1,41 +1,5 @@
 import type { ReactNode } from 'react';
 
-type ProgrammingLanguage =
-    | 'typescript'
-    | 'javascript'
-    | 'powershell'
-    | 'python'
-    | 'php'
-    | 'go'
-    | 'rust'
-    | 'java';
-
-type MarkupLanguage = 'html' | 'css' | 'svg';
-
-type Library =
-    | 'bun'
-    | 'motion'
-    | 'react'
-    | 'vue'
-    | 'preact'
-    | 'solidjs'
-    | 'zod'
-    | 'lodash'
-    | 'date-fns';
-
-type Framework =
-    | 'nextjs'
-    | 'tailwindcss'
-    | 'nuxt'
-    | 'sveltekit'
-    | 'angular'
-    | 'remix'
-    | 'astro'
-    | 'qwik'
-    | 'nestjs';
-
-type Skill = ProgrammingLanguage | MarkupLanguage | Library | Framework;
-
 interface WorkExperienceSchema {
     company: string;
     role: string;
@@ -50,7 +14,7 @@ interface ProjectSchema {
     name: string;
     description: string;
     image: string;
-    skills: Skill[];
+    skills: ReactNode[];
 }
 
 export interface DataSchema {
@@ -73,7 +37,7 @@ export interface DataSchema {
         linkedin: string;
         email: string;
     };
-    skills: Skill[];
+    skills: ReactNode[];
     workExperiences: WorkExperienceSchema[];
     projects: ProjectSchema[];
 }

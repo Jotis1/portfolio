@@ -1,4 +1,5 @@
 import type { DataSchema } from '@/lib/data/schema';
+import { skills } from '@/lib/data/skills';
 
 export const data: DataSchema = {
     badge: {
@@ -20,15 +21,7 @@ export const data: DataSchema = {
         linkedin: 'https://www.linkedin.com/in/jotis-cuellar',
         email: 'business@jotis.me',
     },
-    skills: [
-        'typescript',
-        'javascript',
-        'powershell',
-        'python',
-        'php',
-        'css',
-        'html',
-    ],
+    skills,
     workExperiences: [
         {
             company: 'Becall',

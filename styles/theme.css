@@ -133,7 +133,7 @@
 
     /* ANIMATIONS */
     --animate-marquee: marquee 60s linear infinite;
-    --animate-marquee-left: marquee-left 60s linear infinite;
+    --animate-marquee-reverse: marquee-left 60s linear infinite;
     --animate-caret-blink: caret-blink 1s infinite;
 
     @keyframes marquee {
@@ -147,10 +147,10 @@
 
     @keyframes marquee-left {
         0% {
-            transform: translateX(0);
+            transform: translateX(-50%);
         }
         100% {
-            transform: translateX(50%);
+            transform: translateX(0%);
         }
     }
 

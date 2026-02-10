@@ -11,8 +11,8 @@ export default function Home() {
         <main className="flex flex-col items-center">
             <Sidebar />
             <Hero />
-            {/* <SkillsCarousel />
-            <Experience />
+            <SkillsCarousel />
+            {/* <Experience />
             <Projects />
             <About />
             <Footer /> */}

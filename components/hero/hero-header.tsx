@@ -42,7 +42,7 @@ export function HeroHeader() {
                         aria-label="LinkedIn profile"
                         className="focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0A66C2]"
                     >
-                        <LinkedIn className="size-6 text-[#0A66C2]" />
+                        <LinkedIn className="size-6" />
                     </Button>
                 )}
             </div>
