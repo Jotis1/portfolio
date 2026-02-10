@@ -1,8 +1,8 @@
 import { ImageUserCheck, Mail01 } from '@untitledui/icons';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { GitHubIcon } from './assets/icons/github-icon';
-import { LinkedInIcon } from './assets/icons/linkedin-icon';
+import { GitHub } from './assets/icons/github';
+import { LinkedInIcon } from './assets/icons/linkedin';
 
 type FooterLink = {
     id: number;
@@ -25,7 +25,7 @@ const footerLinks: FooterLink[] = [
         id: 2,
         content: (
             <>
-                <GitHubIcon className="size-5" />
+                <GitHub className="size-5" />
                 GitHub
             </>
         ),

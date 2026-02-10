@@ -11,11 +11,11 @@ export default function Home() {
         <main className="flex flex-col items-center">
             <Sidebar />
             <Hero />
-            <SkillsCarousel />
+            {/* <SkillsCarousel />
             <Experience />
             <Projects />
             <About />
-            <Footer />
+            <Footer /> */}
         </main>
     );
 }

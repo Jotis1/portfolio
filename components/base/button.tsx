@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import type {
+    AnchorHTMLAttributes,
+    ButtonHTMLAttributes,
+    ComponentProps,
+} from 'react';
 import { cn } from '@/utils/cn';
-
-type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-    href: string;
-};
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     href?: never;
@@ -18,7 +18,7 @@ export function Button({
     className,
     children,
     ...props
-}: (ButtonProps | LinkProps) & { size?: 'sm' | 'md' }) {
+}: (ButtonProps | ComponentProps<typeof Link>) & { size?: 'sm' | 'md' }) {
     const classNames = cn(
         'bg-primary border border-primary drop-shadow-md',
         size === 'sm' ? 'p-1.5 text-sm rounded-md' : 'p-2.5 rounded-xl',

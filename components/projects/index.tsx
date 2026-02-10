@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { ComponentProps } from 'react';
 import { HandDrawnArrow } from '@/components/assets/hand-drawn-arrow';
-import { GitHubIcon } from '@/components/assets/icons/github-icon';
+import { GitHubIcon } from '@/components/assets/icons/github';
 import { LinePattern } from '@/components/assets/patterns/line';
 import { Project } from '@/components/projects/project';
 

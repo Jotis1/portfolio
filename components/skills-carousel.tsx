@@ -1,12 +1,12 @@
 import type { ComponentProps } from 'react';
-import { CSS } from '@/components/assets/icons/css-icon';
-import { JavaScript } from '@/components/assets/icons/js-icon';
-import { Php } from '@/components/assets/icons/php-icon';
-import { PowerShell } from '@/components/assets/icons/pwsh-icon';
-import { Python } from '@/components/assets/icons/py-icon';
-import { TypeScript } from '@/components/assets/icons/ts-icon';
+import { CSS } from '@/components/assets/icons/css';
+import { JavaScript } from '@/components/assets/icons/javascript';
+import { Php } from '@/components/assets/icons/php';
+import { PowerShell } from '@/components/assets/icons/powershell';
+import { Python } from '@/components/assets/icons/python';
+import { TypeScript } from '@/components/assets/icons/typescript';
 import { Carousel } from '@/components/base/carousel';
-import { HTML5 } from './assets/icons/html-icon';
+import { HTML5 } from './assets/icons/html';
 
 const carouselProps: ComponentProps<typeof Carousel> = {
     elements: [

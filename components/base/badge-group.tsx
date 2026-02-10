@@ -1,12 +1,11 @@
 import { ArrowRight } from '@untitledui/icons';
+import type { data } from '@/lib/data';
 
-type BadgeGroupProps = {
-    addonText: string;
-    text: string;
-    href?: string;
-};
-
-export function BadgeGroup({ addonText, text, href }: BadgeGroupProps) {
+export function BadgeGroup({
+    addonText,
+    content,
+    href,
+}: NonNullable<typeof data.badge>) {
     return (
         <a
             href={href}
@@ -17,7 +16,7 @@ export function BadgeGroup({ addonText, text, href }: BadgeGroupProps) {
                 {addonText}
             </div>
             <div className="flex items-center gap-1">
-                {text}
+                {content}
                 <ArrowRight size={16} className="text-utility-gray-500" />
             </div>
         </a>
