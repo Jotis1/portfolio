@@ -24,13 +24,11 @@ export interface DataSchema {
         href?: string;
     };
     user: {
+        avatar: string;
         name: string;
         alias: string;
         description: string;
-        about: {
-            avatar: string;
-            content: ReactNode;
-        };
+        about: ReactNode;
     };
     social: {
         github: string;

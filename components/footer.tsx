@@ -1,8 +1,8 @@
+import { GitHubDark, LinkedIn } from '@ridemountainpig/svgl-react';
 import { ImageUserCheck, Mail01 } from '@untitledui/icons';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { GitHub } from './assets/icons/github';
-import { LinkedInIcon } from './assets/icons/linkedin';
+import { data } from '@/lib/data';
 
 type FooterLink = {
     id: number;
@@ -15,21 +15,21 @@ const footerLinks: FooterLink[] = [
         id: 1,
         content: (
             <>
-                <LinkedInIcon className="size-5" />
+                <LinkedIn className="size-5" />
                 LinkedIn
             </>
         ),
-        href: 'https://www.linkedin.com/in/jotis-cuellar',
+        href: data.social.linkedin,
     },
     {
         id: 2,
         content: (
             <>
-                <GitHub className="size-5" />
+                <GitHubDark className="size-5" />
                 GitHub
             </>
         ),
-        href: 'https://github.com/jotis1',
+        href: data.social.github,
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const footerLinks: FooterLink[] = [
                 Email
             </>
         ),
-        href: 'mailto:business@jotis.me',
+        href: `mailto:${data.social.email}`,
     },
     {
         id: 4,

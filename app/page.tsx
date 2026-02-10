@@ -14,8 +14,8 @@ export default function Home() {
             <SkillsCarousel />
             <Experience />
             <Projects />
-            {/* <About />
-            <Footer /> */}
+            <About />
+            <Footer />
         </main>
     );
 }
