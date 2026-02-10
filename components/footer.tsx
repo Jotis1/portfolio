@@ -15,7 +15,7 @@ const footerLinks: FooterLink[] = [
         id: 1,
         content: (
             <>
-                <LinkedIn className="size-5" />
+                <LinkedIn className="size-5 *:fill-fg-white" />
                 LinkedIn
             </>
         ),

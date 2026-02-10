@@ -31,7 +31,7 @@ export function HeroHeader() {
                         aria-label="GitHub profile"
                         className="focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary"
                     >
-                        <GitHub className="size-6 *:fill-fg-primary!" />
+                        <GitHub className="size-6 *:fill-fg-primary" />
                     </Button>
                 )}
                 {data.social?.linkedin && (

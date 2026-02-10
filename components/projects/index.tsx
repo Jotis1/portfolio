@@ -38,7 +38,7 @@ export function Projects() {
                 href={data.social.github}
             >
                 See my GitHub
-                <GitHubDark className="size-5 *:fill-fg-brand-secondary_alt!" />
+                <GitHubDark className="size-5 *:fill-fg-brand-secondary_alt" />
                 <HandDrawnArrow className="absolute -left-[calc(100%+10px)] top-1/2 -translate-y-5 text-fg-primary" />
             </Link>
             <LinePattern className="absolute top-1/2 left-1/2 -translate-1/2" />
