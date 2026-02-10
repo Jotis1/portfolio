@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import { NavLink } from './navlink';
+import { NavLink } from './nav-link';
 
 const navLinks: ComponentProps<typeof NavLink>[] = [
     {

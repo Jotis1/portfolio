@@ -1,14 +1,9 @@
 import Image from 'next/image';
-import type { data } from '@/lib/data';
+import type { ProjectSchema } from '@/lib/data/schema';
 import { generateUniqueId } from '@/utils/generate-unique-id';
 import { Badge } from '../base/badge';
 
-export function Project({
-    name,
-    description,
-    skills,
-    image,
-}: (typeof data.projects)[number]) {
+export function Project({ name, description, skills, image }: ProjectSchema) {
     return (
         <div className="max-w-sm flex flex-col rounded-2xl bg-primary border-2 border-brand drop-shadow-md overflow-hidden">
             <picture className="relative w-full h-64 bg-tertiary">

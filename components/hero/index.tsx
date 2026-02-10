@@ -1,7 +1,7 @@
+import { GridCheckPattern } from '@/components/assets/patterns/grid-check';
 import { HeroHeader } from '@/components/hero/hero-header';
-import { GridCheckPattern } from '../assets/patterns/grid-check';
-import { ThemeButton } from '../theme-button';
-import { HeroStats } from './hero-stats';
+import { HeroStats } from '@/components/hero/hero-stats';
+import { ThemeButton } from '@/components/theme-button';
 
 export function Hero() {
     return (

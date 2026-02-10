@@ -46,7 +46,7 @@ const dataSchema = z.object({
     user: userSchema,
     social: socialSchema,
     skills: z.array(skillSchema),
-    workExperience: z.array(workExperienceSchema),
+    workExperiences: z.array(workExperienceSchema),
     projects: z.array(projectSchema),
 });
 

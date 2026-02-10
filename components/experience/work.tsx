@@ -1,6 +1,6 @@
 import { Clock } from '@untitledui/icons';
 import { HandDrawnAccent } from '@/components/assets/hand-drawn-accent';
-import type { data } from '@/lib/data';
+import type { WorkExperienceSchema } from '@/lib/data/schema';
 import { cn } from '@/utils/cn';
 
 export function Work({
@@ -8,7 +8,7 @@ export function Work({
     role,
     description,
     duration,
-}: (typeof data.workExperiences)[number]) {
+}: WorkExperienceSchema) {
     const isCurrent = duration.to === 'currently';
     const fromYear = duration.from.getFullYear().toString();
     const toYear = isCurrent
@@ -35,7 +35,6 @@ export function Work({
                     />
                 </>
             )}
-
             <header>
                 <h3 className="text-sm font-semibold text-brand-secondary">
                     {company}
@@ -43,7 +42,6 @@ export function Work({
                 <h2 className="text-md font-semibold text-primary">{role}</h2>
                 <p className="mt-2 mb-5 text-tertiary">{description}</p>
             </header>
-
             <span className="flex items-center gap-1.5 text-sm font-semibold text-tertiary">
                 <Clock
                     className="size-5 text-fg-quaternary"

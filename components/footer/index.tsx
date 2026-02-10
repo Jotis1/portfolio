@@ -1,19 +1,14 @@
 import { GitHubDark, LinkedIn } from '@ridemountainpig/svgl-react';
 import { ImageUserCheck, Mail01 } from '@untitledui/icons';
 import Link from 'next/link';
-import type { ReactNode } from 'react';
+import type { ComponentProps } from 'react';
 import { data } from '@/lib/data';
+import type { FooterLink } from './footer-link';
 
-type FooterLink = {
-    id: number;
-    content: ReactNode;
-    href: string;
-};
-
-const footerLinks: FooterLink[] = [
+const footerLinks: ComponentProps<typeof FooterLink>[] = [
     {
-        id: 1,
-        content: (
+        id: '1',
+        children: (
             <>
                 <LinkedIn className="size-5 *:fill-fg-white" />
                 LinkedIn
@@ -22,8 +17,8 @@ const footerLinks: FooterLink[] = [
         href: data.social.linkedin,
     },
     {
-        id: 2,
-        content: (
+        id: '2',
+        children: (
             <>
                 <GitHubDark className="size-5" />
                 GitHub
@@ -32,8 +27,8 @@ const footerLinks: FooterLink[] = [
         href: data.social.github,
     },
     {
-        id: 3,
-        content: (
+        id: '3',
+        children: (
             <>
                 <Mail01 className="size-5" />
                 Email
@@ -42,8 +37,8 @@ const footerLinks: FooterLink[] = [
         href: `mailto:${data.social.email}`,
     },
     {
-        id: 4,
-        content: (
+        id: '4',
+        children: (
             <>
                 <ImageUserCheck className="size-5" />
                 Curriculum
@@ -59,11 +54,9 @@ export function Footer() {
             {footerLinks.map((link, _) => (
                 <Link
                     key={link.id}
-                    href={link.href}
                     className="flex items-center gap-2"
-                >
-                    {link.content}
-                </Link>
+                    {...link}
+                />
             ))}
         </footer>
     );

@@ -1,11 +1,7 @@
 import { ArrowRight } from '@untitledui/icons';
-import type { data } from '@/lib/data';
+import type { BadgeSchema } from '@/lib/data/schema';
 
-export function BadgeGroup({
-    addonText,
-    content,
-    href,
-}: NonNullable<typeof data.badge>) {
+export function BadgeGroup({ addonText, content, href }: BadgeSchema) {
     return (
         <a
             href={href}
