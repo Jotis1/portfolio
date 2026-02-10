@@ -1,5 +1,7 @@
+import { projects } from '@/lib/data/projects';
 import type { DataSchema } from '@/lib/data/schema';
 import { skills } from '@/lib/data/skills';
+import { workExperiences } from '@/lib/data/work-experiences';
 
 export const data: DataSchema = {
     badge: {
@@ -22,59 +24,6 @@ export const data: DataSchema = {
         email: 'business@jotis.me',
     },
     skills,
-    workExperiences: [
-        {
-            company: 'Becall',
-            role: 'Software Developer & Cibersecurity Manager',
-            description:
-                'Developing multiplatform applications and managing the company\u2019s mobile timekeeping application. Implementing best practices and test-based development.',
-            duration: {
-                from: new Date('01/12/2024'),
-                to: 'currently',
-            },
-        },
-        {
-            company: 'Becall',
-            role: 'Junior Full-stack Developer',
-            description:
-                'Developing multiplatform applications and managing the company\u2019s mobile timekeeping application. Implementing best practices and test-based development.',
-            duration: {
-                from: new Date('01/09/2023'),
-                to: new Date('01/12/2024'),
-            },
-        },
-        {
-            company: 'Furor Games',
-            role: 'Full-stack Developer',
-            description:
-                'Client project for an online gymkhana store, using Strapi as a headless CMS with a GraphQL API, built with Next.js and secure payments processing via Redsys.',
-            duration: {
-                from: new Date('01/11/2023'),
-                to: new Date('01/05/2024'),
-            },
-        },
-    ],
-    projects: [
-        {
-            name: 'Byte & Slice',
-            description:
-                'Experience the free, unlimited, open-source URL shortener that puts your privacy first—no tracking, no logs, no cookies. Deploy and self-host effortlessly on your server with Docker in just minutes!',
-            image: '/byte-and-slice.png',
-            skills: ['tailwindcss', 'nextjs', 'bun'],
-        },
-        {
-            name: 'Becall App',
-            description:
-                'A mobile application designed to efficiently manage productivity for modern businesses. It enables employees to accurately track schedules, clock in and out and manage breaks.',
-            image: '/becall-app.png',
-            skills: ['tailwindcss', 'angular'],
-        },
-        {
-            name: 'Yorubot',
-            description:
-                'Experience the free, unlimited, open-source URL shortener that puts your privacy first—no tracking, no logs, no cookies. Deploy and self-host effortlessly on your server with Docker in just minutes!',
-            image: '/byte-and-slice.png',
-            skills: ['typescript', 'bun'],
-        },
-    ],
+    workExperiences,
+    projects,
 };

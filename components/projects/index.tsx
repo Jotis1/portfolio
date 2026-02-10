@@ -1,73 +1,17 @@
+import { GitHubDark } from '@ridemountainpig/svgl-react';
 import Link from 'next/link';
-import type { ComponentProps } from 'react';
 import { HandDrawnArrow } from '@/components/assets/hand-drawn-arrow';
-import { GitHubIcon } from '@/components/assets/icons/github';
 import { LinePattern } from '@/components/assets/patterns/line';
 import { Project } from '@/components/projects/project';
-
-const projects: (ComponentProps<typeof Project> & { id: number })[] = [
-    {
-        id: 1,
-        name: 'Byte & Slice',
-        description:
-            'Experience the free, unlimited, open-source URL shortener that puts your privacy first—no tracking, no logs, no cookies. Deploy and self-host effortlessly on your server with Docker in just minutes!',
-        image: '/project-mockups/byte-and-slice.png',
-        tags: [
-            {
-                id: 1,
-                content: 'TailwindCSS',
-            },
-            {
-                id: 2,
-                content: 'Next.js',
-            },
-            {
-                id: 3,
-                content: 'Bun',
-            },
-        ],
-    },
-    {
-        id: 2,
-        name: 'Becall App',
-        description:
-            'A mobile application designed to efficiently manage productivity for modern businesses. It enables employees to accurately track schedules, clock in and out and manage breaks.',
-        image: '/project-mockups/becall-app.png',
-        tags: [
-            {
-                id: 1,
-                content: 'TailwindCSS',
-            },
-            {
-                id: 2,
-                content: 'Angular',
-            },
-            {
-                id: 3,
-                content: 'Ionic',
-            },
-        ],
-    },
-    {
-        id: 3,
-        name: 'Yorubot',
-        description:
-            'Built with the powerful Discord.js library. Crafted purely for entertainment and fun interactions. Ready to deploy, fully open-source, and released under the permissive MIT license!',
-        image: '/project-mockups/yorubot.png',
-        tags: [
-            {
-                id: 1,
-                content: 'TypeScript',
-            },
-            {
-                id: 2,
-                content: 'Bun',
-            },
-        ],
-    },
-];
+import { data } from '@/lib/data';
+import { generateUniqueId } from '@/utils/generate-unique-id';
 
 export function Projects() {
+    const projects = data.projects.map((project) => ({
+        id: generateUniqueId(),
+        content: project,
+    }));
+
     return (
         <section className="relative w-full py-24 flex flex-col gap-16 items-center justify-center bg-brand-primary_alt">
             <header className="z-1 flex flex-col gap-3 items-center justify-center text-center">
@@ -79,22 +23,22 @@ export function Projects() {
                 </p>
             </header>
             <div className="z-1 flex flex-wrap items-center justify-center gap-8">
-                {projects.map((p, _) => (
+                {projects.map((project, _) => (
                     <Project
-                        key={p.id}
-                        name={p.name}
-                        description={p.description}
-                        image={p.image}
-                        tags={p.tags}
+                        key={project.id}
+                        name={project.content.name}
+                        description={project.content.description}
+                        image={project.content.image}
+                        skills={project.content.skills}
                     />
                 ))}
             </div>
             <Link
                 className="relative z-1 flex items-center gap-1 text-sm font-semibold text-brand-secondary"
-                href={'https://github.com/Jotis1'}
+                href={data.social.github}
             >
                 See my GitHub
-                <GitHubIcon className="size-5 text-fg-brand-secondary_alt" />
+                <GitHubDark className="size-5 *:fill-fg-brand-secondary_alt!" />
                 <HandDrawnArrow className="absolute -left-[calc(100%+10px)] top-1/2 -translate-y-5 text-fg-primary" />
             </Link>
             <LinePattern className="absolute top-1/2 left-1/2 -translate-1/2" />

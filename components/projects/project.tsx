@@ -1,18 +1,14 @@
 import Image from 'next/image';
-import type { ReactNode } from 'react';
+import type { data } from '@/lib/data';
+import { generateUniqueId } from '@/utils/generate-unique-id';
 import { Badge } from '../base/badge';
 
-interface ProjectProps {
-    name: string;
-    description: string;
-    tags: {
-        id: number;
-        content: ReactNode;
-    }[];
-    image: string;
-}
-
-export function Project({ name, description, tags, image }: ProjectProps) {
+export function Project({
+    name,
+    description,
+    skills,
+    image,
+}: (typeof data.projects)[number]) {
     return (
         <div className="max-w-sm flex flex-col rounded-2xl bg-primary border-2 border-brand drop-shadow-md overflow-hidden">
             <picture className="relative w-full h-64 bg-tertiary">
@@ -31,8 +27,8 @@ export function Project({ name, description, tags, image }: ProjectProps) {
                     <p>{description}</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                    {tags.map((t, _) => (
-                        <Badge key={t.id}>{t.content}</Badge>
+                    {skills.map((skill, _) => (
+                        <Badge key={generateUniqueId()}>{skill}</Badge>
                     ))}
                 </div>
             </div>

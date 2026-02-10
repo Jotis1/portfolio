@@ -30,7 +30,7 @@ export function Experience() {
                 {experiences.map((work, i, arr) => (
                     <li key={work.id} className="flex flex-col items-center">
                         <Work {...work.content} />
-                        {!(i === arr.length) && (
+                        {!(i === arr.length - 1) && (
                             <hr
                                 className={cn(
                                     'h-17 w-px border-0 bg-border-secondary select-none',
