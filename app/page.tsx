@@ -12,8 +12,8 @@ export default function Home() {
             <Sidebar />
             <Hero />
             <SkillsCarousel />
-            {/* <Experience />
-            <Projects />
+            <Experience />
+            {/* <Projects />
             <About />
             <Footer /> */}
         </main>

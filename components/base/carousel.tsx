@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useMemo } from 'react';
+import { generateUniqueId } from '@/utils/generate-unique-id';
 
 interface CarouselItem {
     id: string;
@@ -15,10 +16,6 @@ interface CarouselGroup {
 
 interface CarouselProps {
     items: ReactNode[];
-}
-
-function generateUniqueId(): string {
-    return Math.random().toString(36).substring(2, 9);
 }
 
 export function Carousel({ items }: CarouselProps) {

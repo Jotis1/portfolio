@@ -44,10 +44,10 @@ export const data: DataSchema = {
             },
         },
         {
-            company: 'Becall',
-            role: 'Software Developer & Cibersecurity Manager',
+            company: 'Furor Games',
+            role: 'Full-stack Developer',
             description:
-                'Developing multiplatform applications and managing the company\u2019s mobile timekeeping application. Implementing best practices and test-based development.',
+                'Client project for an online gymkhana store, using Strapi as a headless CMS with a GraphQL API, built with Next.js and secure payments processing via Redsys.',
             duration: {
                 from: new Date('01/11/2023'),
                 to: new Date('01/05/2024'),
