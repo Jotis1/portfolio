@@ -25,7 +25,7 @@ export function Projects() {
                     Take a look at my work
                 </p>
             </header>
-            <div className='z-1 flex flex-wrap items-center justify-center gap-8'>
+            <div className='z-1 max-w-4xl w-full flex flex-wrap items-center justify-center gap-8 *:shrink-0'>
                 {projects.map((project, _) => (
                     <Project
                         key={project.id}
@@ -41,7 +41,7 @@ export function Projects() {
                     className='flex items-center gap-1 text-sm font-semibold text-brand-secondary hover:underline'
                     href={data.social.github}
                 >
-                    See my GitHub
+                    View my GitHub
                     <GitHubDark className='size-5 *:fill-fg-brand-secondary_alt' />
                 </Link>
                 <HandDrawnArrow className='absolute -left-[calc(100%+10px)] top-1/2 -translate-y-5 text-fg-primary' />

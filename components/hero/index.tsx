@@ -9,7 +9,7 @@ export function Hero() {
             className='relative py-24 lg:px-8 px-4 flex flex-col gap-12 overflow-hidden'
             aria-labelledby='hero-heading'
         >
-            <div className='absolute w-full flex justify-between top-0 left-0 lg:p-8 p-4'>
+            <div className='absolute w-full flex lg:justify-end justify-between top-0 left-0 lg:p-8 p-4'>
                 <h1 className='lg:hidden text-display-xs font-display font-bold italic text-brand-primary'>
                     Jotis.me
                 </h1>

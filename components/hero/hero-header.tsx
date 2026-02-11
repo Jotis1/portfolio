@@ -14,7 +14,7 @@ export function HeroHeader() {
             {data.badge && <BadgeGroup {...data.badge} />}
             <div className='flex flex-col items-center gap-3 text-center'>
                 <Tooltip content={data.user?.alias ?? ''} />
-                <h1 className='text-display-xl font-bold font-display text-primary'>
+                <h1 className='lg:text-display-xl text-display-md font-bold font-display text-primary'>
                     I&apos;m {data.user?.name ?? 'Developer'}
                 </h1>
                 <h2 className='text-display-xs font-display text-secondary lowercase'>

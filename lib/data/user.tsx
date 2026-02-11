@@ -1,7 +1,7 @@
 import { userSchema } from '@/lib/data/schema';
 
 const user = userSchema.parse({
-    avatar: 'https://github.com/jotis1.png',
+    avatar: '/avatar.jpg',
     name: 'Juan M. Cuellar',
     alias: 'Jotis',
     description: 'A 21-yo spanish software developer',

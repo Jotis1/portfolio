@@ -22,17 +22,17 @@ export function About() {
                 <div className='prose prose-tertiary max-w-2xl'>
                     <p>{about}</p>
                 </div>
-                <figure className='size-62 aspect-square p-1 rounded-4xl bg-primary drop-shadow-lg border border-secondary_alt shrink-0'>
-                    <div className='relative size-full p-1 rounded-[28px] bg-primary shadow-modern-mockup-inner-sm'>
-                        <Image
-                            src={avatar}
-                            alt={`Profile picture of ${name}`}
-                            width={234}
-                            height={234}
-                            sizes='(max-width: 1024px) 100vw, 234px'
-                            className='rounded-3xl bg-secondary border-2 border-utility-gray-200 object-cover'
-                            priority={false}
-                        />
+                <figure className='w-62 aspect-3/4 p-1 rounded-4xl bg-primary drop-shadow-lg border border-secondary_alt shrink-0'>
+                    <div className='size-full p-1 rounded-[28px] bg-primary shadow-modern-mockup-inner-sm'>
+                        <div className='size-full relative'>
+                            <Image
+                                src={avatar}
+                                alt={`Profile picture of ${name}`}
+                                fill
+                                className=' rounded-3xl bg-secondary border-2 border-utility-gray-200 object-cover'
+                                priority={false}
+                            />
+                        </div>
                     </div>
                 </figure>
             </div>

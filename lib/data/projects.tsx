@@ -67,6 +67,22 @@ const projects = z.array(projectSchema).parse([
             </Fragment>,
         ],
     },
+    {
+        name: 'ScriptHub',
+        description:
+            'Experience the free, unlimited, open-source URL shortener that puts your privacy first—no tracking, no logs, no cookies. Deploy and self-host effortlessly on your server with Docker in just minutes!',
+        image: undefined,
+        skills: [
+            <Fragment key={1}>
+                <TypeScript className='size-4' />
+                TypeScript
+            </Fragment>,
+            <Fragment key={2}>
+                <Bun className='size-4' />
+                Bun
+            </Fragment>,
+        ],
+    },
 ]);
 
 export { projects };

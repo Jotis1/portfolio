@@ -37,7 +37,7 @@ const workExperienceSchema = z.object({
 const projectSchema = z.object({
     name: z.string(),
     description: z.string(),
-    image: z.url().or(z.string().startsWith('/')),
+    image: z.url().or(z.string().startsWith('/')).optional(),
     skills: z.array(skillSchema),
 });
 
