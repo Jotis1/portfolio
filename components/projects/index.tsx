@@ -44,7 +44,7 @@ export function Projects() {
                     View my GitHub
                     <GitHubDark className='size-5 *:fill-fg-brand-secondary_alt' />
                 </Link>
-                <HandDrawnArrow className='absolute -left-[calc(100%+10px)] top-1/2 -translate-y-5 text-fg-primary' />
+                <HandDrawnArrow className=' sm:size-auto size-32 absolute sm:-left-[calc(100%+10px)] -left-[calc(100%-10px)] top-1/2 sm:-translate-y-5 -translate-y-3.5 trab text-fg-primary' />
             </div>
             <LinePattern className='absolute top-1/2 left-1/2 -translate-1/2' />
         </section>
