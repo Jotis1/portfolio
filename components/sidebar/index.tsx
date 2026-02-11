@@ -33,7 +33,7 @@ const navLinks: ComponentProps<typeof NavLink>[] = [
 
 export function Sidebar() {
     return (
-        <nav className='z-10 fixed top-8 left-8 w-fit p-4 hidden lg:flex flex-col gap-6 rounded-xl bg-alpha-white/80 backdrop-blur-md'>
+        <nav className='z-10 fixed top-8 left-8 w-fit p-4 hidden lg:flex flex-col items-center gap-6 rounded-xl bg-alpha-white/90 backdrop-blur-xs'>
             <h1 className='text-display-xs font-display font-bold italic text-brand-primary'>
                 Jotis.me
             </h1>

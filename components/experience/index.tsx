@@ -12,7 +12,7 @@ export function Experience() {
     return (
         <section
             id='experience'
-            className='max-w-180 w-full py-24 px-8 flex flex-col gap-16 bg-primary overflow-hidden'
+            className='max-w-180 w-full py-24 lg:px-8 px-4 flex flex-col gap-16 bg-primary overflow-hidden'
             aria-label='Work experience'
         >
             <header className='flex flex-col gap-3 items-center justify-center text-center'>

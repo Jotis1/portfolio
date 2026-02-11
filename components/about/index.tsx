@@ -7,7 +7,7 @@ export function About() {
     return (
         <section
             id='about'
-            className='py-24 px-8 flex flex-col gap-16 items-center justify-center max-w-180 w-full mx-auto'
+            className='py-24 lg:px-8 px-4 flex flex-col gap-16 items-center justify-center max-w-180 w-full mx-auto'
             aria-labelledby='about'
         >
             <header className='flex flex-col gap-3 text-center'>

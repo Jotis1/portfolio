@@ -45,7 +45,7 @@ export function Carousel({ items }: CarouselProps) {
 
     return (
         <section
-            className='w-full px-8 py-12 flex flex-col gap-6 bg-brand-section'
+            className='w-full lg:px-8 px-4 py-12 flex flex-col gap-6 bg-brand-section'
             aria-label='Carousel'
         >
             {groups.map((group) => (
