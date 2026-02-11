@@ -1,33 +1,30 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import { useMemo } from 'react';
+import { type ReactNode, useMemo } from 'react';
+import { data } from '@/lib/data';
 import { generateUniqueId } from '@/utils/generate-unique-id';
+import { Marquee } from './base/marquee';
 
-interface CarouselItem {
+interface MarqueeGroup {
     id: string;
-    content: ReactNode;
+    items: {
+        id: string;
+        content: ReactNode;
+    }[];
 }
 
-interface CarouselGroup {
-    id: string;
-    items: CarouselItem[];
-}
+export function Skills() {
+    const skills = data.skills ?? [];
 
-interface CarouselProps {
-    items: ReactNode[];
-}
-
-export function Carousel({ items }: CarouselProps) {
-    const groups = useMemo((): CarouselGroup[] => {
+    const groups = useMemo((): MarqueeGroup[] => {
         const groupSize = 10;
-        if (!items?.length) return [];
+        if (!skills?.length) return [];
 
         return Array.from(
-            { length: Math.ceil(items.length / groupSize) },
+            { length: Math.ceil(skills.length / groupSize) },
             (_, i) => {
                 const start = i * groupSize;
-                const groupItems = items.slice(start, start + groupSize);
+                const groupItems = skills.slice(start, start + groupSize);
                 const duplicated = [...groupItems, ...groupItems];
 
                 return {
@@ -39,19 +36,20 @@ export function Carousel({ items }: CarouselProps) {
                 };
             },
         );
-    }, [items]);
+    }, [skills]);
 
     if (!groups.length) return null;
-
     return (
         <section
+            id='skills'
             className='w-full lg:px-8 px-4 py-12 flex flex-col gap-6 bg-brand-section'
-            aria-label='Carousel'
         >
-            {groups.map((group) => (
-                <div
+            {groups.map((group, i) => (
+                <Marquee
                     key={group.id}
-                    className='p-5 max-w-5xl w-full mx-auto overflow-hidden mask-x-from-80% odd:*:animate-marquee even:*:animate-marquee-reverse'
+                    pauseOnHover
+                    reverse={i % 2 === 0}
+                    className='max-w-5xl w-full mx-auto overflow-hidden mask-x-from-80%'
                 >
                     <div
                         className='w-fit flex items-center gap-8 motion-reduce:animate-none'
@@ -67,7 +65,7 @@ export function Carousel({ items }: CarouselProps) {
                             </span>
                         ))}
                     </div>
-                </div>
+                </Marquee>
             ))}
         </section>
     );

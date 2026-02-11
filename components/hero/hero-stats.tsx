@@ -1,4 +1,5 @@
 import { data } from '@/lib/data';
+import { NumberTicker } from '../base/animation/number-ticker';
 
 interface StatProps {
     count: number;
@@ -12,9 +13,10 @@ function Stat({ count, description }: StatProps) {
             role='img'
             aria-label={`${description}: ${count}`}
         >
-            <div className='text-display-xl font-display font-bold text-brand-tertiary_alt'>
-                {count.toLocaleString()}
-            </div>
+            <NumberTicker
+                value={count}
+                className='text-display-xl font-display font-bold text-brand-tertiary_alt'
+            />
             <div className='text-lg text-primary'>{description}</div>
         </div>
     );

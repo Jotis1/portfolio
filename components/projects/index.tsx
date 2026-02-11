@@ -5,6 +5,7 @@ import { LinePattern } from '@/components/assets/patterns/line';
 import { Project } from '@/components/projects/project';
 import { data } from '@/lib/data';
 import { generateUniqueId } from '@/utils/generate-unique-id';
+import { BlurFade } from '../base/animation/blur-fade';
 
 export function Projects() {
     const projects = data.projects.map((project) => ({
@@ -26,14 +27,19 @@ export function Projects() {
                 </p>
             </header>
             <div className='z-1 max-w-4xl w-full flex flex-wrap items-center justify-center gap-8 *:shrink-0'>
-                {projects.map((project, _) => (
-                    <Project
+                {projects.map((project, i) => (
+                    <BlurFade
                         key={project.id}
-                        name={project.content.name}
-                        description={project.content.description}
-                        image={project.content.image}
-                        skills={project.content.skills}
-                    />
+                        delay={0.2 * i}
+                        inView
+                    >
+                        <Project
+                            name={project.content.name}
+                            description={project.content.description}
+                            image={project.content.image}
+                            skills={project.content.skills}
+                        />
+                    </BlurFade>
                 ))}
             </div>
             <div className='relative z-1 '>

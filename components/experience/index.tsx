@@ -2,6 +2,7 @@ import { Work } from '@/components/experience/work';
 import { data } from '@/lib/data';
 import { cn } from '@/utils/cn';
 import { generateUniqueId } from '@/utils/generate-unique-id';
+import { BlurFade } from '../base/animation/blur-fade';
 
 export function Experience() {
     const experiences = data.workExperiences.map((experience) => ({
@@ -28,21 +29,24 @@ export function Experience() {
                 aria-label='Timeline of work experience'
             >
                 {experiences.map((work, i, arr) => (
-                    <li
-                        key={work.id}
-                        className='flex flex-col items-center'
-                    >
-                        <Work {...work.content} />
-                        {!(i === arr.length - 1) && (
-                            <hr
-                                className={cn(
-                                    'h-17 w-px border-0 bg-border-secondary select-none',
-                                    i === 0 && 'w-0.5 bg-border-brand',
-                                )}
-                                aria-hidden='true'
-                                tabIndex={-1}
-                            />
-                        )}
+                    <li key={work.id}>
+                        <BlurFade
+                            delay={0.2 * i}
+                            inView
+                            className='flex flex-col items-center'
+                        >
+                            <Work {...work.content} />
+                            {!(i === arr.length - 1) && (
+                                <hr
+                                    className={cn(
+                                        'h-17 w-px border-0 bg-border-secondary select-none',
+                                        i === 0 && 'w-0.5 bg-border-brand',
+                                    )}
+                                    aria-hidden='true'
+                                    tabIndex={-1}
+                                />
+                            )}
+                        </BlurFade>
                     </li>
                 ))}
             </ol>
