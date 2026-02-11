@@ -47,7 +47,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     return (
         <html
             lang='en'
-            className={cn(fonts, 'scroll-smooth dark-mode')}
+            className={cn(fonts, 'scroll-smooth')}
         >
             <body className='bg-primary text-tertiary antialiased selection:bg-brand-solid selection:text-primary_on-brand'>
                 <ThemeProvider>
