@@ -7,6 +7,9 @@ export function FooterLink({
     ...props
 }: ComponentProps<typeof Link>) {
     return (
-        <Link className={cn('flex items-center gap-2', className)} {...props} />
+        <Link
+            className={cn('flex items-center gap-2 hover:underline', className)}
+            {...props}
+        />
     );
 }

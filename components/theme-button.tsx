@@ -11,9 +11,13 @@ export function ThemeButton() {
         <Button
             size="sm"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="*:size-5 text-fg-quaternary"
+            className="text-fg-quaternary"
         >
-            {theme === 'dark' ? <Sun /> : <Moon01 />}
+            {theme === 'dark' ? (
+                <Sun className="size-5" />
+            ) : (
+                <Moon01 className="size-5" />
+            )}
         </Button>
     );
 }

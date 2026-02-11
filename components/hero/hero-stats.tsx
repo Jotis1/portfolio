@@ -8,7 +8,7 @@ interface StatProps {
 function Stat({ count, description }: StatProps) {
     return (
         <div
-            className="max-w-xs w-full flex flex-col items-center gap-4 text-center"
+            className="max-w-3xs w-full flex flex-col items-center gap-4 text-center"
             role="img"
             aria-label={`${description}: ${count}`}
         >

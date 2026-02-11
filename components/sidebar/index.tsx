@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentProps } from 'react';
 import { NavLink } from './nav-link';
 
@@ -31,7 +33,7 @@ const navLinks: ComponentProps<typeof NavLink>[] = [
 
 export function Sidebar() {
     return (
-        <nav className="z-10 fixed top-8 left-8 w-fit p-4 flex flex-col gap-6 rounded-xl bg-alpha-white/80 backdrop-blur-md">
+        <nav className="z-10 fixed top-8 left-8 w-fit p-4 hidden lg:flex flex-col gap-6 rounded-xl bg-alpha-white/80 backdrop-blur-md">
             <h1 className="text-display-xs font-display font-bold italic text-brand-primary">
                 Jotis.me
             </h1>

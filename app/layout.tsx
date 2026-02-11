@@ -7,8 +7,8 @@ import { body, display, mono } from '@/styles/fonts';
 import '@/styles/globals.css';
 
 // Lib
+import { ActiveSectionProvider } from '@/lib/providers/active-section-provider';
 import { ThemeProvider } from '@/lib/providers/theme-provider';
-
 // Utils
 import { cn } from '@/utils/cn';
 
@@ -26,8 +26,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
 
     return (
         <html lang="en" className={cn(fonts, 'scroll-smooth dark-mode')}>
-            <body className="bg-primary text-tertiary antialiased">
-                <ThemeProvider>{children}</ThemeProvider>
+            <body className="bg-primary text-tertiary antialiased selection:bg-brand-solid selection:text-primary_on-brand">
+                <ThemeProvider>
+                    <ActiveSectionProvider>{children}</ActiveSectionProvider>
+                </ThemeProvider>
             </body>
         </html>
     );

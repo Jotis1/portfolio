@@ -3,5 +3,9 @@ import { data } from '@/lib/data';
 
 export function SkillsCarousel() {
     const skills = data.skills ?? [];
-    return <Carousel items={skills} aria-label="Skills carousel" />;
+    return (
+        <section id="skills" className="w-full">
+            <Carousel items={skills} aria-label="Skills carousel" />
+        </section>
+    );
 }

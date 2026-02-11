@@ -20,7 +20,7 @@ export function Button({
     ...props
 }: (ButtonProps | ComponentProps<typeof Link>) & { size?: 'sm' | 'md' }) {
     const classNames = cn(
-        'bg-primary border border-primary drop-shadow-md',
+        'bg-primary hover:bg-primary_hover hover:text-secondary border border-primary drop-shadow-md',
         size === 'sm' ? 'p-1.5 text-sm rounded-md' : 'p-2.5 rounded-xl',
     );
 

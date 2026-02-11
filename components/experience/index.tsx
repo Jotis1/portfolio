@@ -11,7 +11,8 @@ export function Experience() {
 
     return (
         <section
-            className="max-w-180 w-full py-24 px-8 flex flex-col gap-16 bg-primary"
+            id="experience"
+            className="max-w-180 w-full py-24 px-8 flex flex-col gap-16 bg-primary overflow-hidden"
             aria-label="Work experience"
         >
             <header className="flex flex-col gap-3 items-center justify-center text-center">
@@ -22,7 +23,6 @@ export function Experience() {
                     Contributing my knowledge since 2023
                 </p>
             </header>
-
             <ol
                 className="flex flex-col items-center"
                 aria-label="Timeline of work experience"

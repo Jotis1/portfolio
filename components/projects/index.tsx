@@ -13,7 +13,10 @@ export function Projects() {
     }));
 
     return (
-        <section className="relative w-full py-24 flex flex-col gap-16 items-center justify-center bg-brand-primary_alt">
+        <section
+            id="projects"
+            className="relative w-full py-24 flex flex-col gap-16 items-center justify-center bg-brand-primary_alt overflow-x-clip"
+        >
             <header className="z-1 flex flex-col gap-3 items-center justify-center text-center">
                 <h1 className="text-display-md font-display font-semibold text-brand-primary">
                     My projects
@@ -33,14 +36,16 @@ export function Projects() {
                     />
                 ))}
             </div>
-            <Link
-                className="relative z-1 flex items-center gap-1 text-sm font-semibold text-brand-secondary"
-                href={data.social.github}
-            >
-                See my GitHub
-                <GitHubDark className="size-5 *:fill-fg-brand-secondary_alt" />
+            <div className="relative z-1 ">
+                <Link
+                    className="flex items-center gap-1 text-sm font-semibold text-brand-secondary hover:underline"
+                    href={data.social.github}
+                >
+                    See my GitHub
+                    <GitHubDark className="size-5 *:fill-fg-brand-secondary_alt" />
+                </Link>
                 <HandDrawnArrow className="absolute -left-[calc(100%+10px)] top-1/2 -translate-y-5 text-fg-primary" />
-            </Link>
+            </div>
             <LinePattern className="absolute top-1/2 left-1/2 -translate-1/2" />
         </section>
     );

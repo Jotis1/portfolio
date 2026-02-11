@@ -6,10 +6,11 @@ export function About() {
 
     return (
         <section
+            id="about"
             className="py-24 px-8 flex flex-col gap-16 items-center justify-center max-w-180 w-full mx-auto"
             aria-labelledby="about"
         >
-            <header id="about" className="flex flex-col gap-3 text-center">
+            <header className="flex flex-col gap-3 text-center">
                 <h1 className="text-display-md font-display font-semibold text-primary">
                     About me
                 </h1>

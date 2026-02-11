@@ -6,7 +6,7 @@ import { Badge } from '../base/badge';
 export function Project({ name, description, skills, image }: ProjectSchema) {
     return (
         <div className="max-w-sm flex flex-col rounded-2xl bg-primary border-2 border-brand drop-shadow-md overflow-hidden">
-            <picture className="relative w-full h-64 bg-tertiary">
+            <picture className="relative w-full h-64 bg-brand-primary">
                 <Image
                     src={image}
                     alt={`${name} mockup`}
