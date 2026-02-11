@@ -32,7 +32,7 @@ export function Work({
                         aria-hidden='true'
                     />
                     <HandDrawnAccentStart1
-                        className='sm:hidden block absolute -bottom-15 right-0 text-fg-primary'
+                        className='sm:hidden block absolute -bottom-12 right-0 text-fg-primary'
                         aria-hidden='true'
                     />
                     <HandDrawnAccent
