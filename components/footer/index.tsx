@@ -9,7 +9,7 @@ const footerLinks: ComponentProps<typeof FooterLink>[] = [
         id: '1',
         children: (
             <>
-                <LinkedIn className="size-5 *:fill-fg-white" />
+                <LinkedIn className='size-5 *:fill-fg-white' />
                 LinkedIn
             </>
         ),
@@ -19,7 +19,7 @@ const footerLinks: ComponentProps<typeof FooterLink>[] = [
         id: '2',
         children: (
             <>
-                <GitHubDark className="size-5" />
+                <GitHubDark className='size-5' />
                 GitHub
             </>
         ),
@@ -29,7 +29,7 @@ const footerLinks: ComponentProps<typeof FooterLink>[] = [
         id: '3',
         children: (
             <>
-                <Mail01 className="size-5" />
+                <Mail01 className='size-5' />
                 Email
             </>
         ),
@@ -39,7 +39,7 @@ const footerLinks: ComponentProps<typeof FooterLink>[] = [
         id: '4',
         children: (
             <>
-                <ImageUserCheck className="size-5" />
+                <ImageUserCheck className='size-5' />
                 Curriculum
             </>
         ),
@@ -49,9 +49,12 @@ const footerLinks: ComponentProps<typeof FooterLink>[] = [
 
 export function Footer() {
     return (
-        <footer className="w-full py-12 flex flex-wrap items-center justify-center gap-8 bg-brand-section text-fg-white text-sm">
+        <footer className='w-full py-12 flex flex-wrap items-center justify-center gap-8 bg-brand-section text-fg-white text-sm'>
             {footerLinks.map((link, _) => (
-                <FooterLink key={link.id} {...link} />
+                <FooterLink
+                    key={link.id}
+                    {...link}
+                />
             ))}
         </footer>
     );

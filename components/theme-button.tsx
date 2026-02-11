@@ -9,14 +9,14 @@ export function ThemeButton() {
 
     return (
         <Button
-            size="sm"
+            size='sm'
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="text-fg-quaternary"
+            className='text-fg-quaternary'
         >
             {theme === 'dark' ? (
-                <Sun className="size-5" />
+                <Sun className='size-5' />
             ) : (
-                <Moon01 className="size-5" />
+                <Moon01 className='size-5' />
             )}
         </Button>
     );

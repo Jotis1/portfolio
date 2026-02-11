@@ -8,14 +8,14 @@ interface StatProps {
 function Stat({ count, description }: StatProps) {
     return (
         <div
-            className="max-w-3xs w-full flex flex-col items-center gap-4 text-center"
-            role="img"
+            className='max-w-3xs w-full flex flex-col items-center gap-4 text-center'
+            role='img'
             aria-label={`${description}: ${count}`}
         >
-            <div className="text-display-xl font-display font-bold text-brand-tertiary_alt">
+            <div className='text-display-xl font-display font-bold text-brand-tertiary_alt'>
                 {count.toLocaleString()}
             </div>
-            <div className="text-lg text-primary">{description}</div>
+            <div className='text-lg text-primary'>{description}</div>
         </div>
     );
 }
@@ -57,9 +57,15 @@ export function HeroStats() {
     const { projectsCount, yearsOfExperience } = useHeroStats();
 
     return (
-        <div className="w-full flex flex-wrap items-center justify-center gap-y-8">
-            <Stat count={projectsCount} description="Projects completed" />
-            <Stat count={yearsOfExperience} description="Years of experience" />
+        <div className='w-full flex flex-wrap items-center justify-center gap-y-8'>
+            <Stat
+                count={projectsCount}
+                description='Projects completed'
+            />
+            <Stat
+                count={yearsOfExperience}
+                description='Years of experience'
+            />
         </div>
     );
 }

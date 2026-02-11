@@ -12,7 +12,8 @@
     "formatter": {
         "enabled": true,
         "indentStyle": "space",
-        "indentWidth": 4
+        "indentWidth": 4,
+        "attributePosition": "multiline"
     },
     "linter": {
         "enabled": true,
@@ -20,6 +21,9 @@
             "recommended": true,
             "suspicious": {
                 "noUnknownAtRules": "off"
+            },
+            "style": {
+                "useExportsLast": "error"
             }
         },
         "domains": {
@@ -30,7 +34,8 @@
     "javascript": {
         "formatter": {
             "semicolons": "always",
-            "quoteStyle": "single"
+            "quoteStyle": "single",
+            "jsxQuoteStyle": "single"
         }
     },
     "assist": {

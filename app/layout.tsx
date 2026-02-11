@@ -25,8 +25,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
     const fonts = [body.variable, display.variable, mono.variable];
 
     return (
-        <html lang="en" className={cn(fonts, 'scroll-smooth dark-mode')}>
-            <body className="bg-primary text-tertiary antialiased selection:bg-brand-solid selection:text-primary_on-brand">
+        <html
+            lang='en'
+            className={cn(fonts, 'scroll-smooth dark-mode')}
+        >
+            <body className='bg-primary text-tertiary antialiased selection:bg-brand-solid selection:text-primary_on-brand'>
                 <ThemeProvider>
                     <ActiveSectionProvider>{children}</ActiveSectionProvider>
                 </ThemeProvider>

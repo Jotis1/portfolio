@@ -18,15 +18,15 @@ const projects = z.array(projectSchema).parse([
         image: '/project-mockups/byte-and-slice.png',
         skills: [
             <Fragment key={1}>
-                <TailwindCSS className="size-4" />
+                <TailwindCSS className='size-4' />
                 Tailwindcss
             </Fragment>,
             <Fragment key={2}>
-                <Nextjs className="size-4" />
+                <Nextjs className='size-4' />
                 Next.js
             </Fragment>,
             <Fragment key={3}>
-                <Bun className="size-4" />
+                <Bun className='size-4' />
                 Bun
             </Fragment>,
         ],
@@ -38,15 +38,15 @@ const projects = z.array(projectSchema).parse([
         image: '/project-mockups/becall-app.png',
         skills: [
             <Fragment key={1}>
-                <TailwindCSS className="size-4" />
+                <TailwindCSS className='size-4' />
                 Tailwindcss
             </Fragment>,
             <Fragment key={2}>
-                <Angular className="size-4" />
+                <Angular className='size-4' />
                 Angular
             </Fragment>,
             <Fragment key={3}>
-                <Android className="size-4" />
+                <Android className='size-4' />
                 Android
             </Fragment>,
         ],
@@ -58,11 +58,11 @@ const projects = z.array(projectSchema).parse([
         image: '/project-mockups/byte-and-slice.png',
         skills: [
             <Fragment key={1}>
-                <TypeScript className="size-4" />
+                <TypeScript className='size-4' />
                 TypeScript
             </Fragment>,
             <Fragment key={2}>
-                <Bun className="size-4" />
+                <Bun className='size-4' />
                 Bun
             </Fragment>,
         ],

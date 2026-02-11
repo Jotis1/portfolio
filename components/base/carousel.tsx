@@ -45,23 +45,23 @@ export function Carousel({ items }: CarouselProps) {
 
     return (
         <section
-            className="w-full px-8 py-12 flex flex-col gap-6 bg-brand-section"
-            aria-label="Carousel"
+            className='w-full px-8 py-12 flex flex-col gap-6 bg-brand-section'
+            aria-label='Carousel'
         >
             {groups.map((group) => (
                 <div
                     key={group.id}
-                    className="p-5 max-w-5xl w-full mx-auto overflow-hidden mask-x-from-80% odd:*:animate-marquee even:*:animate-marquee-reverse"
+                    className='p-5 max-w-5xl w-full mx-auto overflow-hidden mask-x-from-80% odd:*:animate-marquee even:*:animate-marquee-reverse'
                 >
                     <div
-                        className="w-fit flex items-center gap-8 motion-reduce:animate-none"
-                        aria-live="polite"
+                        className='w-fit flex items-center gap-8 motion-reduce:animate-none'
+                        aria-live='polite'
                     >
                         {group.items.map((item) => (
                             <span
                                 key={item.id}
-                                className="flex items-center gap-3 text-display-xs font-display font-bold text-fg-white whitespace-nowrap"
-                                aria-hidden="true"
+                                className='flex items-center gap-3 text-display-xs font-display font-bold text-fg-white whitespace-nowrap'
+                                aria-hidden='true'
                             >
                                 {item.content}
                             </span>
