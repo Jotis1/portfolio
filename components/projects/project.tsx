@@ -6,7 +6,7 @@ import { generateUniqueId } from '@/utils/generate-unique-id';
 
 export function Project({ name, description, skills, image }: ProjectSchema) {
     return (
-        <div className='w-fit max-w-sm flex flex-col rounded-2xl bg-primary border-2 border-brand drop-shadow-md overflow-hidden'>
+        <div className='w-full max-w-sm flex flex-col rounded-2xl bg-primary border-2 border-brand drop-shadow-md overflow-hidden'>
             <picture className='relative w-full aspect-video bg-brand-secondary'>
                 {image ? (
                     <Image

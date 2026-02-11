@@ -32,6 +32,7 @@ export function Projects() {
                         key={project.id}
                         delay={0.2 * i}
                         inView
+                        className='w-full'
                     >
                         <Project
                             name={project.content.name}
