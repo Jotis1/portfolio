@@ -55,7 +55,7 @@ const projects = z.array(projectSchema).parse([
         name: 'Yorubot',
         description:
             'Experience the free, unlimited, open-source URL shortener that puts your privacy first—no tracking, no logs, no cookies. Deploy and self-host effortlessly on your server with Docker in just minutes!',
-        image: '/project-mockups/byte-and-slice.png',
+        image: '/project-mockups/yorubot.png',
         skills: [
             <Fragment key={1}>
                 <TypeScript className='size-4' />
