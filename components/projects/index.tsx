@@ -15,7 +15,7 @@ export function Projects() {
     return (
         <section
             id='projects'
-            className='relative w-full py-24 flex flex-col gap-16 items-center justify-center bg-brand-primary_alt overflow-x-clip'
+            className='relative w-full py-24 lg:px-8 px-4 flex flex-col gap-16 items-center justify-center bg-brand-primary_alt overflow-x-clip'
         >
             <header className='z-1 flex flex-col gap-3 items-center justify-center text-center'>
                 <h1 className='text-display-md font-display font-semibold text-brand-primary'>
