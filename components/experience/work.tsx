@@ -1,5 +1,7 @@
 import { Clock } from '@untitledui/icons';
 import { HandDrawnAccent } from '@/components/assets/hand-drawn-accent';
+import { HandDrawnAccentStart1 } from '@/components/assets/hand-drawn-accent-star-1';
+import { HandDrawnAccentStart2 } from '@/components/assets/hand-drawn-accent-star-2';
 import type { WorkExperienceSchema } from '@/lib/data/schema';
 import { cn } from '@/utils/cn';
 
@@ -26,11 +28,19 @@ export function Work({
             {isCurrent && (
                 <>
                     <HandDrawnAccent
-                        className='absolute -bottom-10 -right-10 text-fg-primary'
+                        className='sm:block hidden absolute -bottom-10 -right-10 text-fg-primary'
+                        aria-hidden='true'
+                    />
+                    <HandDrawnAccentStart1
+                        className='sm:hidden block absolute -bottom-15 right-0 text-fg-primary'
                         aria-hidden='true'
                     />
                     <HandDrawnAccent
-                        className='absolute -top-10 -left-10 rotate-180 text-fg-primary'
+                        className='sm:block hidden absolute -top-10 -left-10 rotate-180 text-fg-primary'
+                        aria-hidden='true'
+                    />
+                    <HandDrawnAccentStart2
+                        className='sm:hidden block absolute -top-15 left-0 rotate-180 text-fg-primary'
                         aria-hidden='true'
                     />
                 </>

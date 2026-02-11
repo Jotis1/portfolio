@@ -9,5 +9,3 @@ export default function robots(): MetadataRoute.Robots {
         sitemap: 'https://jotis.me/sitemap.xml',
     };
 }
-
-export const dynamic = 'force-static';
