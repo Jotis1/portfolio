@@ -6,7 +6,7 @@ const workExperiences = z.array(workExperienceSchema).parse([
         company: 'Becall',
         role: 'Software Developer & Cibersecurity Manager',
         description:
-            'Developing multiplatform applications and managing the company\u2019s mobile timekeeping application. Implementing best practices and test-based development.',
+            'Led cybersecurity strategy and secure software development, implementing risk mitigation, incident response (Wazuh SIEM), and GDPR/NIS2/ENS compliance to protect infrastructure and reduce vulnerabilities.',
         duration: {
             from: new Date('01/12/2024'),
             to: 'currently',
