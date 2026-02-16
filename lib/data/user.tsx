@@ -1,7 +1,7 @@
 import { userSchema } from '@/lib/data/schema';
 
 const user = userSchema.parse({
-    avatar: '/full-body.jfif',
+    avatar: '/full-body.jpg',
     name: 'Juan M. Cuellar',
     alias: 'Jotis',
     description: 'A 21-yo spanish software developer',
