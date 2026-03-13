@@ -85,7 +85,7 @@ Para resolver definitivamente la limitación de 15 caracteres, se define un nomb
  
 ### 3.1 Patrón de Hostname
  
-```
+```md
 <LOC>-<PLT>-<ENV>-<ROL>-<NNN>
 ```
  

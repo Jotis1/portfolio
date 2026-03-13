@@ -8,9 +8,9 @@ export default function Page() {
     const content = fs.readFileSync(filePath, 'utf8');
 
     return (
-        <main className='py-24 lg:px-8 px-4 flex items-center justify-center'>
+        <main className='py-24 lg:px-8 px-4 flex'>
             <Sidebar />
-            <MarkdownRenderer content={content} />
+            <MarkdownRenderer>{content}</MarkdownRenderer>
         </main>
     );
 }
