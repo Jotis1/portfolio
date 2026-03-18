@@ -1,0 +1,57 @@
+---
+import Layout from "@components/layouts/root.astro";
+import Badge from "@components/base/badge.astro";
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = async () => {
+    const wiki = await getCollection("wiki");
+    const pages = wiki.flatMap((page) =>
+        [page.id, `${page.id}.md`].map((id) => ({
+            params: { slug: id },
+            props: { page, slug: id },
+        })),
+    );
+
+    return pages;
+};
+
+const { page, slug } = Astro.props;
+
+if (slug.endsWith(".md")) return Astro.redirect("/raw/" + slug);
+
+const { Content } = await render(page);
+---
+
+<Layout>
+    <div class="py-24 px-8 flex flex-col items-center gap-16">
+        <header
+            class="max-w-[65ch] w-full flex flex-col items-center gap-8 mx-auto"
+        >
+            <div class="flex flex-col items-center gap-6 text-center">
+                <div class="flex flex-col gap-3">
+                    <span class="font-semibold text-brand-tertiary"
+                        >Published {page.data.updatedDate?.toDateString()}</span
+                    >
+                    <h1
+                        class="text-display-lg font-semibold font-display text-primary"
+                    >
+                        {page.data.title}
+                    </h1>
+                </div>
+                <p class="text-xl">{page.data.description}</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                {
+                    page.data.tags.map((tag) => (
+                        <Badge variant="pill">{tag}</Badge>
+                    ))
+                }
+            </div>
+        </header>
+        <div class="max-w-container w-full aspect-video bg-tertiary"></div>
+    </div>
+    <main class="max-w-[65ch] w-full pb-24 px-8 prose mx-auto">
+        <Content />
+    </main>
+</Layout>
