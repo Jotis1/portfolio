@@ -1,0 +1,121 @@
+---
+type Placement =
+  | "top" | "bottom" | "left" | "right"
+  | "top left" | "top right" | "top start" | "top end"
+  | "bottom left" | "bottom right" | "bottom start" | "bottom end";
+
+export interface Props {
+  /** Main text of the tooltip */
+  title: string;
+  /** Optional secondary text below the title */
+  description?: string;
+  /** Whether to render the directional arrow */
+  arrow?: boolean;
+  /** Where the tooltip appears relative to the trigger */
+  placement?: Placement;
+  /** Distance in px between trigger and tooltip */
+  offset?: number;
+  /** Delay in ms before the tooltip shows */
+  delay?: number;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  arrow = false,
+  placement = "top",
+  offset = 6,
+  delay = 300,
+  class: className,
+} = Astro.props;
+
+const id = `tooltip-${Math.random().toString(36).slice(2, 9)}`;
+
+// ─── Placement config ─────────────────────────────────────────────────────────
+
+type PlacementConfig = {
+  /** Absolute-position classes for the tooltip box */
+  box: string;
+  /** Absolute-position + transform classes for the arrow wrapper */
+  arrowPos: string;
+  /** Tailwind rotation class for the arrow SVG */
+  arrowRotate: string;
+  /** transform-origin for the scale animation */
+  origin: string;
+  /** Which CSS margin property to use for the offset gap */
+  marginProp: string;
+};
+
+const configs: Record<string, PlacementConfig> = {
+  "top":          { box: "bottom-full left-1/2 -translate-x-1/2",  arrowPos: "bottom-0 left-1/2 -translate-x-1/2 translate-y-full",  arrowRotate: "rotate-0",    origin: "origin-bottom",       marginProp: "margin-bottom" },
+  "top left":     { box: "bottom-full -left-3",                    arrowPos: "bottom-0 left-3 translate-y-full",                     arrowRotate: "rotate-0",    origin: "origin-bottom-left",  marginProp: "margin-bottom" },
+  "top end":      { box: "bottom-full -left-3",                    arrowPos: "bottom-0 left-3 translate-y-full",                     arrowRotate: "rotate-0",    origin: "origin-bottom-left",  marginProp: "margin-bottom" },
+  "top right":    { box: "bottom-full -right-3",                   arrowPos: "bottom-0 right-3 translate-y-full",                    arrowRotate: "rotate-0",    origin: "origin-bottom-right", marginProp: "margin-bottom" },
+  "top start":    { box: "bottom-full -right-3",                   arrowPos: "bottom-0 right-3 translate-y-full",                    arrowRotate: "rotate-0",    origin: "origin-bottom-right", marginProp: "margin-bottom" },
+  "bottom":       { box: "top-full left-1/2 -translate-x-1/2",    arrowPos: "top-0 left-1/2 -translate-x-1/2 -translate-y-full",    arrowRotate: "rotate-180",  origin: "origin-top",          marginProp: "margin-top" },
+  "bottom left":  { box: "top-full -left-3",                      arrowPos: "top-0 left-3 -translate-y-full",                       arrowRotate: "rotate-180",  origin: "origin-top-left",     marginProp: "margin-top" },
+  "bottom end":   { box: "top-full -left-3",                      arrowPos: "top-0 left-3 -translate-y-full",                       arrowRotate: "rotate-180",  origin: "origin-top-left",     marginProp: "margin-top" },
+  "bottom right": { box: "top-full -right-3",                     arrowPos: "top-0 right-3 -translate-y-full",                      arrowRotate: "rotate-180",  origin: "origin-top-right",    marginProp: "margin-top" },
+  "bottom start": { box: "top-full -right-3",                     arrowPos: "top-0 right-3 -translate-y-full",                      arrowRotate: "rotate-180",  origin: "origin-top-right",    marginProp: "margin-top" },
+  "left":         { box: "right-full top-1/2 -translate-y-1/2",   arrowPos: "right-0 top-1/2 -translate-y-1/2 translate-x-full",    arrowRotate: "-rotate-90",  origin: "origin-right",        marginProp: "margin-right" },
+  "right":        { box: "left-full top-1/2 -translate-y-1/2",    arrowPos: "left-0 top-1/2 -translate-y-1/2 -translate-x-full",    arrowRotate: "rotate-90",   origin: "origin-left",         marginProp: "margin-left" },
+};
+
+const cfg = configs[placement] ?? configs["top"];
+---
+
+<div
+  class="tooltip-wrapper relative inline-block"
+  style={`--tooltip-delay: ${delay}ms`}
+  aria-describedby={id}
+>
+  <slot />
+
+  <div
+    id={id}
+    role="tooltip"
+    style={`${cfg.marginProp}: ${offset}px`}
+    class:list={[
+      "tooltip-content absolute z-50 flex w-max max-w-xs flex-col items-start gap-1 rounded-lg bg-primary-solid px-3 shadow-lg will-change-transform",
+      cfg.box,
+      cfg.origin,
+      description ? "py-3" : "py-2",
+      className,
+    ]}
+  >
+    <span class="text-xs font-semibold text-white">{title}</span>
+
+    {description && (
+      <span class="text-xs font-medium text-tooltip-supporting-text">{description}</span>
+    )}
+
+    {arrow && (
+      <div class:list={["absolute size-2.5", cfg.arrowPos]} aria-hidden="true">
+        <svg viewBox="0 0 100 100" class:list={["size-full fill-bg-primary-solid", cfg.arrowRotate]}>
+          <path d="M0,0 L35.858,35.858 Q50,50 64.142,35.858 L100,0 Z" />
+        </svg>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  /* Hidden by default — instant hide (no delay) */
+  .tooltip-content {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: opacity 100ms ease, transform 100ms ease;
+    transition-delay: 0ms;
+  }
+
+  /* Visible on hover/focus — delayed show */
+  .tooltip-wrapper:hover .tooltip-content,
+  .tooltip-wrapper:focus-within .tooltip-content {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition-delay: var(--tooltip-delay, 300ms);
+  }
+</style>

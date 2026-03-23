@@ -1,7 +1,27 @@
 ---
 import Layout from "@components/layouts/root.astro";
+import Button from "@components/base/button.astro";
+import Badge from "@components/base/badge.astro";
+import BadgeGroup from "@components/base/badge-group.astro";
+import Tooltip from "@components/base/tooltip.astro";
+import TooltipTrigger from "@components/base/tooltip-trigger.astro";
 ---
 
 <Layout>
-	<h1>Astro</h1>
+	<main class="p-24">
+		<Tooltip
+			title="Save document"
+			description="This tooltip is shit"
+			arrow
+			placement="top"
+		>
+			<TooltipTrigger>
+				<Button>Save document</Button>
+			</TooltipTrigger>
+		</Tooltip>
+	</main>
+
+	<BadgeGroup addonText="Update"> Hello world </BadgeGroup>
+	<Badge color="brand" type="pill-color">This is a badge!</Badge>
+	<Button color="primary-destructive">This is a button!</Button>
 </Layout>

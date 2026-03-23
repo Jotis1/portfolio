@@ -1,0 +1,13 @@
+---
+export interface Props {
+  type?: "button" | "submit" | "reset";
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { type = "button", class: className, ...rest } = Astro.props;
+---
+
+<button type={type} {...rest} class:list={["h-max w-max cursor-pointer outline-hidden", className]}>
+  <slot />
+</button>
